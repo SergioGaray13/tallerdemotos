@@ -7,9 +7,9 @@ interface Params {
   id: string; // Cambié el tipo a string porque generalmente los parámetros de la URL son cadenas.
 }
 
-export async function PUT(request: NextRequest, { params }: { params: Params }) {
+export async function PUT(request: NextRequest, context: { params: Params }) {
   const supabase = await createClient();
-  const { id } = params; // Ahora 'id' es de tipo string, por lo que es mejor convertirlo a número si es necesario
+  const { id } = context.params; // Desestructuración de params desde el contexto
   const { nombre, descripcion, activo } = await request.json();
 
   // Convierte el 'id' a número si es necesario
