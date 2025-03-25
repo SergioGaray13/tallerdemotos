@@ -1,0 +1,36 @@
+tallerdemotos/
+├── .next/                     # Carpeta generada por Next.js (no la toques manualmente)
+├── node_modules/              # Dependencias del proyecto (no la toques manualmente)
+├── public/                    # Archivos estáticos (imágenes, fuentes, etc.)
+│   ├── images/                # Imágenes del proyecto
+│   └── favicon.ico            # Ícono de la pestaña del navegador
+├── src/                       # Código fuente del proyecto (opcional, pero recomendado)
+│   ├── app/                   # Directorio principal de la aplicación (Next.js 13+)
+│   │   ├── Api/               # Manejadores de rutas (route handlers)
+│   │   │   ├── categorias/    # Rutas relacionadas con categorías
+│   │   │   │   ├── editar/
+│   │   │   │   │   ├── [id]/
+│   │   │   │   │   │   └── route.ts  # Manejador de ruta PUT
+│   │   ├── layout.tsx         # Layout principal de la aplicación
+│   │   ├── page.tsx           # Página principal de la aplicación
+│   ├── components/            # Componentes reutilizables
+│   ├── hooks/
+│   │   ├── useVentas.js       # Archivo useVentas
+│   │   ├── useCategorias.js   # Archivo useCategorias
+│   │   ├── useCompras.js      # Archivo useCompras
+│   │   └── useUnidades.js     # Archivo useUnidades
+│   ├── libs/
+│   │   └── utils.ts           # Archivos en libs
+│   ├── store/
+│   │   └── CartStore.js       # Archivo CartStore
+│   ├── utils/                 # Utilidades y funciones auxiliares
+│   │   ├── supabase/          # Configuración de Supabase
+│   │   │   └── server.ts      # Cliente de Supabase para SSR
+│   ├── styles/                # Estilos globales o módulos CSS
+│   └── types/                 # Tipos de TypeScript (interfaces, tipos, etc.)
+├── .env.local                 # Variables de entorno locales (no se sube a Git)
+├── .gitignore                 # Archivos y carpetas ignorados por Git
+├── next.config.js             # Configuración de Next.js
+├── package.json               # Dependencias y scripts del proyecto
+├── tsconfig.json              # Configuración de TypeScript
+└── README.md                  # Documentación del proyecto

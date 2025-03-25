@@ -3,7 +3,7 @@ import { NextResponse, NextRequest } from "next/server";
 import { createClient } from "@/utils/supabase/server";
 
 interface Params {
-  id: number; 
+  id: string;
 }
 
 export async function PUT(request: NextRequest, { params }: { params: Params }) {
