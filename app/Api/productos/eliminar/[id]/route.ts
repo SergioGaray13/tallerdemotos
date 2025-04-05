@@ -1,0 +1,29 @@
+// Api/productos/eliminar/[id]/route.ts
+import { NextResponse, NextRequest } from "next/server";
+import { createClient } from "@/utils/supabase/server";
+
+interface Params {
+  id: string;
+}
+
+export async function DELETE(
+  request: NextRequest,
+  context: { params: Promise<Params> }
+) {
+  const { id } = await context.params;
+
+  console.log("Eliminando producto con id:", id);
+
+  const supabase = await createClient();
+
+  const { error } = await supabase
+    .from("producto")
+    .delete()
+    .eq("id_producto", id);
+
+  if (error) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+
+  return NextResponse.json({ message: "Producto eliminado" }, { status: 200 });
+}
